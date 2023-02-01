@@ -1,0 +1,10 @@
+{
+  "originUrl": "http://127.0.0.1:7788/swagger-spec.json",
+  "templatePath": "./pontTemplate",
+  "outDir": "./services",
+  "originType": "SwaggerV3",
+  "mocks": {
+    "enable": false
+  },
+  "templateType": "hooks"
+}

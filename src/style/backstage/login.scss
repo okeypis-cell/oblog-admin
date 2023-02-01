@@ -1,0 +1,143 @@
+@import '../variables.scss';
+
+.login-page {
+  height: 100%;
+
+  .main-bg {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: $BgImage;
+    transition: 0.5 all;
+  }
+
+  .login-container {
+    position: relative;
+    width: 4.2rem;
+    min-height: 100%;
+    top: 0;
+    display: flex;
+    margin-left: 5%;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.75) 0 0 .35rem -.05rem;
+    backdrop-filter: $BgFilter;  // 模糊遮罩
+    background-color: $loginBlurColor;
+
+    .title-container {
+      display: flex;
+      -webkit-box-align: center;
+      align-items: center;
+      margin: .5rem auto 1rem .5rem;
+
+      .title {
+        height: .5rem;
+        line-height: .5rem;
+        font-size: .2rem;
+        color: $loginTextColor;
+        font-weight: 700;
+        font-family: "TypoGraphica";
+      }
+    }
+
+    .login-form {
+      width: 100%;
+      padding: .2rem .5rem;
+
+      :deep(.n-form-item) {
+        display: block;
+        margin: .14rem 0;
+
+        .n-form-item-feedback-wrapper {
+          padding-top: 5px;
+          padding-left: .48rem;
+        }
+
+        .n-input {
+          background-color: transparent;
+
+          .n-input-wrapper {
+            box-shadow: none;
+            padding: 0;
+
+            .n-input__input {
+              height: .4rem;
+              font-size: .16rem;
+              padding: .08rem .48rem;
+              box-sizing: border-box;
+              transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+              color: $loginTextColor;
+              border-bottom: $loginTextColor .01rem solid;
+
+              .n-input__input-el {
+                height: auto;
+                line-height: normal;
+                color: $loginTextColor;
+              }
+              .n-input__placeholder {
+                display: none;
+              }
+            }
+
+            .el-input__suffix {
+              height: 1px;
+              position: absolute;
+              width: 100%;
+              bottom: 0;
+              border-bottom: 1px $loginSuffixColor solid;
+              transform: scaleX(0);
+              transition: transform 0.3s;
+            }
+          }
+
+          .is-focus {
+            .el-input__suffix {
+              transform: none;
+            }
+          }
+        }
+
+        .show-pwd,
+        .svg-container {
+          position: absolute;
+          text-transform: none;
+          line-height: 1;
+          color: $loginTextColor;
+          font-size: .24rem;
+        }
+
+        .svg-container{
+          left: .1rem;
+        }
+
+        .show-pwd {
+          right: .1rem;
+        }
+
+      }
+
+      .n-button {
+        width: 100%;
+        box-shadow: rgba(0, 0, 0, 0.1) 0 0 .5rem 0;
+        font-weight: 500;
+        font-size: .15rem;
+        color: $loginTextColor;
+        text-align: center;
+        cursor: pointer;
+        min-height: .5rem;
+        background-color: $loginButtonColor;
+        border-radius: .06rem;
+        outline: none;
+        border-style: none;
+        padding: .1rem 0;
+        margin: .3rem 0 1rem;
+        transition: all 0.3s;
+        letter-spacing: .128rem;
+      }
+    }
+  }
+}
